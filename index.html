@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora-Eldissone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="corpo-maquina">
+        <div class="titulo">
+            <h1>CalculA.<span class="txt">Stack<strong>X</strong></span></h1>
+        </div>
+        <div class="tela">
+          <p id="resultado"></p>
+        </div>
+       
+        <table>
+            <tr>
+                <td><button class="botao" onclick="lista.limpaTela()">C</button></td>
+                <td><button class="botao" onclick="lista.apagar()"><</button></td>
+                <td><button class="botao" onclick="lista.inserir('/')">/</button></td>
+                <td><button class="botao" onclick="lista.inserir('*')">x</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="lista.inserir('7')">7</button></td>
+                <td><button class="botao" onclick="lista.inserir('8')">8</button></td>
+                <td><button class="botao" onclick="lista.inserir('9')">9</button></td>
+                <td><button class="botao" onclick="lista.inserir('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="lista.inserir('4')">4</button></td>
+                <td><button class="botao" onclick="lista.inserir('5')">5</button></td>
+                <td><button class="botao" onclick="lista.inserir('6')">6</button></td>
+                <td><button class="botao" onclick="lista.inserir('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="lista.inserir('1')">1</button></td>
+                <td><button class="botao" onclick="lista.inserir('2')">2</button></td>
+                <td><button class="botao" onclick="lista.inserir('3')">3</button></td>
+                <td rowspan="2"><button class="botao igual"onclick = "lista.calcular()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="botao zero" onclick="lista.inserir('0')">0</button></td>
+                <td><button class="botao" onclick="lista.inserir('.')">.</button></td>
+                
+            </tr>
+        </table>
+
+        <span class="historico">historico</span>
+
+    </div>
+    <div class="corpo-Historico hide2">
+        <div class="titulo-historico">
+            <h1>historico</h1>
+            <span class="btn-feichar">feichar</span>
+        </div>
+        <div class="tela-hist">
+            <table>
+                <tbody id="historico-lista">
+
+                </tbody>
+            </table>
+        </div>
+       
+    
+
+
+    </div>
+
+    <script>
+        let abrir = document.querySelector('.historico');
+        let feichar = document.querySelector('.btn-feichar');
+        let contC = document.querySelector('.corpo-Historico');
+
+        abrir.addEventListener("click",function(){
+                
+            contC.classList.toggle("hide2");
+
+        })
+        feichar.addEventListener("click",function(){
+                
+            contC.classList.toggle("hide2");
+
+        })
+    </script>
+    
+</body>
+</html>
